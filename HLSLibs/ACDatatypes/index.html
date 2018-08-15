@@ -10,38 +10,49 @@
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/lux/bootstrap.min.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <a class="navbar-brand" href="#">HLS Libs</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="https://github.com/hlslibs" target="_parent" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">GitHub Repository</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown"> 
-				<a class="dropdown-item" href="https://github.com/hlslibs/ac_types" target="_parent">AC Datatypes</a>
-				              <div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="https://github.com/hlslibs/ac_math" target="_parent">AC Math</a> </div>
-				</li>
-			  
-          <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="https://www.mentor.com/hls-lp/catapult-high-level-synthesis/" target="_parent" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catapult Resources</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="https://www.mentor.com/hls-lp/catapult-high-level-synthesis/" target="_parent">Catapult Home</a>
-				              <div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="https://learn.mentor.com/library/catapult-high-level-synthesis-library/NJnQf9ar4" target="_parent">HLS On-Demand Training</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="https://www.mentor.com/hls-lp/resources/#?filter=9a7fe4d7-3658-46ec-bc78-621b3616b6a8&start=1&limit=70" target="_parent">Catapult Collateral</a> </div>
-          </li>
-			          <li class="nav-item active"> <a class="nav-link" href="partners/" target="_parent">Partners<span class="sr-only">(current)</span></a> </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
+	  <!-- The fixed navbar will overlay your other content, unless you add padding to the bottom of the <body>. Tip: By default, the navbar is 50px high.  -->
+<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+   <a class="navbar-brand" href="#">HLS Libs<span class="sr-only">(current)</span></a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+		           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="https://github.com/hlslibs" target="_parent" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            GitHub Repository
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <a class="dropdown-item" href="https://github.com/hlslibs/ac_types" target="_parent">AC Datatypes</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href="https://github.com/hlslibs/ac_math" target="_parent">AC Math</a>
+            </div>
+         </li>
+		  <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  href="https://www.mentor.com/hls-lp/catapult-high-level-synthesis/" target="_parent" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Catapult Resources
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <a class="dropdown-item" href="https://www.mentor.com/hls-lp/catapult-high-level-synthesis/" target="_parent">Catapult Home</a>
+				<div class="dropdown-divider"></div>
+               <a class="dropdown-item" href="https://learn.mentor.com/library/catapult-high-level-synthesis-library/NJnQf9ar4" target="_parent">HLS On-Demand Training</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href="https://www.mentor.com/hls-lp/resources/#?filter=9a7fe4d7-3658-46ec-bc78-621b3616b6a8&start=1&limit=70" target="_parent">Catapult Collateral</a>
+            </div>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="partners/" target="_parent">Partners</a>
+         </li>
+      </ul>
+   </div>
+</nav>
+	  <br><br><br><br><br>
 <div class="container mt-2">
   <div class="row">
     <div class="col-12">
           <div class="jumbotron">
 <div class="row">
-	      <div class="col-lg-4"><img src="../quantizedwaveform_Vec-01.png" alt="Quantized Waveform" width="300" class="align-middle img-fluid"></div>
+	      <div class="col-lg-4"><img src="/quantizedwaveform_Vec-01.png" alt="Quantized Waveform" width="300" class="align-middle img-fluid"></div>
         <div class="col-lg-8">
 		        <h4>AC Datatypes</h4><p class="text-left">The Algorithmic C datatypes include a numerical set of datatypes and an interface datatype for modeling channels in communicating processes in C++. The numerical datatypes provide an easy way to model static bit-precision with minimal runtime overhead. They include bit-accurate integer, fixed-point, floating-point and complex datatypes. The numerical datatypes were developed in order to provide a basis for writing bit-accurate algorithms to be synthesized into hardware.</p>
 	        &nbsp;
@@ -67,31 +78,31 @@ Operators and methods on both the integer and fixed-point types are clearly and 
 			  <div class="row">
   <div class="col-lg-6">
     <p class="text-left"><br>
-      <strong>Arbitrary-Length:</strong> This allows a clean definition of the semantics for all operators that is not tied to an implementation limit. It is also important for writing general IP algorithms that don’t have artificial (and often hard to quantify and document) limits for precision. For example, Catapult provides generic math functions such as division and square root for arbitrary-length datatypes.<br>
+      <strong><strong>Arbitrary-Length:</strong></strong> This allows a clean definition of the semantics for all operators that is not tied to an implementation limit. It is also important for writing general IP algorithms that don’t have artificial (and often hard to quantify and document) limits for precision. For example, Catapult provides generic math functions such as division and square root for arbitrary-length datatypes.<br>
       <br>
-      <strong>Precise and Consistent Definition of Semantics:</strong> Special attention has been paid to define and verify the simulation semantics and to make sure that the semantics are appropriate for synthesis. No simulation behavior has been left to compiler dependent behavior. Also, asserts have been introduced to catch invalid code during simulation. There is consistency of semantics across datatypes. Whenever possible, the return type of operators does not loose precision.</p>
+      <strong><strong>Precise and Consistent Definition of Semantics:</strong></strong> Special attention has been paid to define and verify the simulation semantics and to make sure that the semantics are appropriate for synthesis. No simulation behavior has been left to compiler dependent behavior. Also, asserts have been introduced to catch invalid code during simulation. There is consistency of semantics across datatypes. Whenever possible, the return type of operators does not loose precision.</p>
   </div>
-  <div class="col-lg-6"><p class="text-left"><br><strong>Correctness:</strong> The simulation and synthesis semantics have been verified for many size combinations using a combination of simulation and equivalence checking.<br><br>
+  <div class="col-lg-6"><p class="text-left"><br><strong><strong>Correctness:</strong></strong> The simulation and synthesis semantics have been verified for many size combinations using a combination of simulation and equivalence checking.<br><br>
 <strong>Simulation Speed:</strong> The implementation of ac_int uses sophisticated template specialization techniques so that a regular C++ compiler can generate optimized assembly language that will run much faster than the equivalent SystemC datatypes. For example, ac_int of bit widths in the range 1 to 32 can run 100x faster than the corresponding sc_bigint/sc_biguint datatype and 3x faster than the corresponding sc_int/sc_uint datatype.<br><br>
-<strong>Compilation Speed and Smaller Executable:</strong> Code written using ac_int datatypes compiles 5x faster even with the compiler optimizations turned on (required to get fast simulation). It also produces smaller binary executables.</p></div>
+<strong><strong>Compilation Speed and Smaller Executable:</strong></strong> Code written using ac_int datatypes compiles 5x faster even with the compiler optimizations turned on (required to get fast simulation). It also produces smaller binary executables.</p></div>
 </div>
 			  <hr>
 <div class="row">
-  <div class="col-lg-12"><br><h4>WHAT YOU GET</h4><br><h6>The zipped folder contains a reference manual, release notes, header files and a python script for pretty printing of the AC Datatypes in the gdb debugger.</h6></div>
+  <div class="col-lg-12"><br><h4>WHAT YOU GET</h4><br><h6>T<span class= "text-lowercase">he zipped folder contains a reference manual, release notes, header files and a python script for pretty printing of the</span> AC D<span class= "text-lowercase">atatypes in the gdb debugger.</span></h6></div>
 </div>
 <div class="row">
   <div class="col-lg-6"><br><ul>
-<li><strong>ac_channel.h </strong>- Header to model streaming communication between blocks in C++.</li>
-<li><strong>ac_complex.h</strong> - Header for complex (real, imaginary) datatype.</li>
-<li><strong>ac_fixed.h</strong> - Header for bit-accurate fixed-point types.</li>
-<li><strong>ac_float.h</strong> - Header for bit-accurate floating-point types. The mantissa is an ac_fixed (two&#39;s complement) and the exponent is an ac_int.</li>
-<li><strong>ac_int.h</strong> - Header for bit-accurate integer types. It also provides other utility functions and contains the base classes to implement arbitrary length arithmetic.</li>
+<li><strong><strong>ac_channel.h </strong></strong>- Header to model streaming communication between blocks in C++.</li>
+<li><strong><strong>ac_complex.h</strong></strong> - Header for complex (real, imaginary) datatype.</li>
+<li><strong><strong>ac_fixed.h</strong></strong> - Header for bit-accurate fixed-point types.</li>
+<li><strong><strong>ac_float.h</strong></strong> - Header for bit-accurate floating-point types. The mantissa is an ac_fixed (two&#39;s complement) and the exponent is an ac_int.</li>
+<li><strong><strong>ac_int.h</strong></strong> - Header for bit-accurate integer types. It also provides other utility functions and contains the base classes to implement arbitrary length arithmetic.</li>
 </ul></div>
   <div class="col-lg-6"><br><ul>
-<li><strong>ac_sc.h</strong> - Header containing conversion function to and from SystemC datatypes and tracing function to use the AC Datatypes within SystemC.</li>
-<li><strong>ac_pp.py</strong> - Python script for pretty printing of the AC Datatypes in the gdb debugger</li>
-<li><strong>Reference Manual </strong>- Overview of Algorithmic C Datatypes</li>
-<li><strong>Release Notes</strong> - Algorithmic C (AC) Datatypes Release Notes Software Version 3.7</li>
+<li><strong><strong>ac_sc.h</strong></strong> - Header containing conversion function to and from SystemC datatypes and tracing function to use the AC Datatypes within SystemC.</li>
+<li><strong><strong>ac_pp.py</strong></strong> - Python script for pretty printing of the AC Datatypes in the gdb debugger</li>
+<li><strong><strong>Reference Manual </strong></strong>- Overview of Algorithmic C Datatypes</li>
+<li><strong><strong>Release Notes</strong></strong> - Algorithmic C (AC) Datatypes Release Notes Software Version 3.7</li>
 </ul></div>
 </div>
       </div>
@@ -99,7 +110,7 @@ Operators and methods on both the integer and fixed-point types are clearly and 
     <div class="col-12">
       <div class="jumbotron">
 <div class="row">
-	      <div class="col-lg-4"><img src="../UnitCircle.png" alt="Unit Circle" width="300" class="align-middle img-fluid"></div>
+	      <div class="col-lg-4"><br><br><br><br><img src="/UnitCircle.png" alt="Unit Circle" width="300" class="align-middle img-fluid"></div>
           <div class="col-lg-8">
             <h4>AC Math</h4>
             <p class="text-left">The Algorithmic C Math Library contains synthesizable C++ functions commonly used in Digital Signal Processing applications. The functions use the Algorithmic C data types and are meant to serve as examples on how to write parameterized models and to facilitate migrating an algorithm from using floating-point to fixed-point arithmetic where the math functions either need to be computed dynamically or via lookup tables or piecewise linear approximations.
