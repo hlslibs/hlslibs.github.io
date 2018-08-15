@@ -28,7 +28,7 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="https://www.mentor.com/hls-lp/resources/#?filter=9a7fe4d7-3658-46ec-bc78-621b3616b6a8&start=1&limit=70" target="_parent">Catapult Collateral</a> </div>
           </li>
-			          <li class="nav-item active"> <a class="nav-link" href="#" target="_parent">Partners<span class="sr-only">(current)</span></a> </li>
+			          <li class="nav-item active"> <a class="nav-link" href="partners/" target="_parent">Partners<span class="sr-only">(current)</span></a> </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -47,14 +47,54 @@
 	        &nbsp;
 		        <div>
 		          <div class="float-right"><div class="btn-group" role="group" aria-label="Basic example">
-		            <button type="button" class="btn btn-secondary">Learn More</button>
-		            &nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href="https://github.com/hlslibs/ac_types/blob/master/pdfdocs/ac_datatypes_ref.pdf" target="_parent" role="button">Documentation</a> 
+		            <a class="btn btn-secondary" href="https://github.com/hlslibs/ac_types/blob/master/pdfdocs/ac_datatypes_ref.pdf" target="_parent" role="button">Documentation</a> 
 		            &nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href="https://github.com/hlslibs/ac_types" target="_parent" role="button">Browse Github</a>
   </div></div>
             </div>
 	      </div>
 </div>
+			      <hr>
+<div class="row">
+  <div class="col-lg-12"><p class="text-left"><br>The Algorithmic C (AC) datatypes include a numerical set of datatypes and an interface datatype for modeling channels in communicating processes in C++. The numerical datatypes provide an easy way to model static bit-precision with minimal runtime overhead. They include bit-accurate integer, fixed-point, floating-point and complex datatypes.  The numerical datatypes were developed in order to provide a basis for writing bit-accurate algorithms to be synthesized into hardware. The Algorithmic C Datatypes are used in Catapult High-Level Synthesis, a tool that generates optimized RTL from algorithms written as sequential ANSI-standard C/C++ specifications.<br><br>
+
+
+Operators and methods on both the integer and fixed-point types are clearly and consistently defined so that they have well defined simulation and synthesis semantics. They enable algorithm, system and hardware designers to precisely model bit-true behavior in C++ specifications while accelerating simulation speeds by 10-200x faster versus alternate bit-accurate integer and fixed-point datatypes. The bit-accurate complex and floating-point types are unique in that they are not available in alternative datatype packages such as SystemC. Bit-accurate complex types are important because they allow computation of additive and multiplicative operations on a mixture of complex operands based on bit-accurate integer and fixed-point types and return the require type so that results are represented without any loss of precision.</p></div>
 </div>
+			      <hr>
+<div class="row">
+  <div class="col-lg-12"><br><h4>The advantages of the AC datatypes over the existing integer and fixed-point datatypes are the following:</h4></div>
+</div>
+			  <div class="row">
+  <div class="col-lg-6">
+    <p class="text-left"><br>
+      <strong>Arbitrary-Length:</strong> This allows a clean definition of the semantics for all operators that is not tied to an implementation limit. It is also important for writing general IP algorithms that don’t have artificial (and often hard to quantify and document) limits for precision. For example, Catapult provides generic math functions such as division and square root for arbitrary-length datatypes.<br>
+      <br>
+      <strong>Precise and Consistent Definition of Semantics:</strong> Special attention has been paid to define and verify the simulation semantics and to make sure that the semantics are appropriate for synthesis. No simulation behavior has been left to compiler dependent behavior. Also, asserts have been introduced to catch invalid code during simulation. There is consistency of semantics across datatypes. Whenever possible, the return type of operators does not loose precision.</p>
+  </div>
+  <div class="col-lg-6"><p class="text-left"><br><strong>Correctness:</strong> The simulation and synthesis semantics have been verified for many size combinations using a combination of simulation and equivalence checking.<br><br>
+<strong>Simulation Speed:</strong> The implementation of ac_int uses sophisticated template specialization techniques so that a regular C++ compiler can generate optimized assembly language that will run much faster than the equivalent SystemC datatypes. For example, ac_int of bit widths in the range 1 to 32 can run 100x faster than the corresponding sc_bigint/sc_biguint datatype and 3x faster than the corresponding sc_int/sc_uint datatype.<br><br>
+<strong>Compilation Speed and Smaller Executable:</strong> Code written using ac_int datatypes compiles 5x faster even with the compiler optimizations turned on (required to get fast simulation). It also produces smaller binary executables.</p></div>
+</div>
+			  <hr>
+<div class="row">
+  <div class="col-lg-12"><br><h4>WHAT YOU GET</h4><br><h6>The zipped folder contains a reference manual, release notes, header files and a python script for pretty printing of the AC Datatypes in the gdb debugger.</h6></div>
+</div>
+<div class="row">
+  <div class="col-lg-6"><br><ul>
+<li><strong>ac_channel.h </strong>- Header to model streaming communication between blocks in C++.</li>
+<li><strong>ac_complex.h</strong> - Header for complex (real, imaginary) datatype.</li>
+<li><strong>ac_fixed.h</strong> - Header for bit-accurate fixed-point types.</li>
+<li><strong>ac_float.h</strong> - Header for bit-accurate floating-point types. The mantissa is an ac_fixed (two&#39;s complement) and the exponent is an ac_int.</li>
+<li><strong>ac_int.h</strong> - Header for bit-accurate integer types. It also provides other utility functions and contains the base classes to implement arbitrary length arithmetic.</li>
+</ul></div>
+  <div class="col-lg-6"><br><ul>
+<li><strong>ac_sc.h</strong> - Header containing conversion function to and from SystemC datatypes and tracing function to use the AC Datatypes within SystemC.</li>
+<li><strong>ac_pp.py</strong> - Python script for pretty printing of the AC Datatypes in the gdb debugger</li>
+<li><strong>Reference Manual </strong>- Overview of Algorithmic C Datatypes</li>
+<li><strong>Release Notes</strong> - Algorithmic C (AC) Datatypes Release Notes Software Version 3.7</li>
+</ul></div>
+</div>
+      </div>
         </div>
     <div class="col-12">
       <div class="jumbotron">
