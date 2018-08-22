@@ -1,10 +1,447 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Untitled Document</title>
-</head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AC Math Page</title>
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap-4.0.0.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/lux/bootstrap.min.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+	  <!-- The fixed navbar will overlay your other content, unless you add padding to the bottom of the <body>. Tip: By default, the navbar is 50px high.  -->
+<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+   <a class="navbar-brand" href="/HLSLibs/">HLS Libs</a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+		           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            GitHub Repository
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <a class="dropdown-item" href="https://github.com/hlslibs" target="_parent">GitHub Repository</a>
+               <div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="https://github.com/hlslibs/ac_types" target="_parent">AC Datatypes</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href="https://github.com/hlslibs/ac_math" target="_parent">AC Math</a>
+            </div>
+         </li>
+		  <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  href="https://www.mentor.com/hls-lp/catapult-high-level-synthesis/" target="_parent" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Catapult Resources
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <a class="dropdown-item" href="https://www.mentor.com/hls-lp/catapult-high-level-synthesis/" target="_parent">Catapult Home</a>
+				<div class="dropdown-divider"></div>
+               <a class="dropdown-item" href="https://learn.mentor.com/library/catapult-high-level-synthesis-library/NJnQf9ar4" target="_parent">HLS On-Demand Training</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href="https://www.mentor.com/hls-lp/resources/#?filter=9a7fe4d7-3658-46ec-bc78-621b3616b6a8&start=1&limit=70" target="_parent">Catapult Collateral</a>
+            </div>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="/HLSLibs/partners/" target="_parent">Partners</a>
+         </li>
+      </ul>
+   </div>
+</nav>
+	  <br><br><br><br><br>
+<div class="container mt-2">
+  <div class="row">
+    <div class="col-12">
+          <div class="jumbotron">
+<div class="row">
+	      <div class="col-lg-4"><img src="/UnitCircle.png" alt="Unit Circle" width="300" class="align-middle img-fluid"></div>
+        <div class="col-lg-8">
+		        <h4>AC Math</h4><p class="text-left">The Algorithmic C Math Library contains synthesizable C++ functions commonly used in Digital Signal Processing applications. The functions use the Algorithmic C data types and are meant to serve as examples on how to write parameterized models and to facilitate migrating an algorithm from using floating-point to fixed-point arithmetic where the math functions either need to be computed dynamically or via lookup tables or piecewise linear approximations.
+The library includes basic math functions (reciprocal, log, exponent, square-root, sin/cos/tan, etc) as well as a matrix storage class and linear algebra functions like multiplication, determinant, Cholesky Inverse/Decomposition, etc. Each function comes with a unit test to demonstrate usage and measurement of errors due to approximations.</p>
+	        &nbsp;
+		        <div>
+		          <div class="float-right"><div class="btn-group" role="group" aria-label="Basic example">
+		            <a class="btn btn-secondary" href="https://github.com/hlslibs/ac_types/blob/master/pdfdocs/ac_datatypes_ref.pdf" target="_parent" role="button">Documentation</a> 
+		            &nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href="https://github.com/hlslibs/ac_types" target="_parent" role="button">Browse Github</a>
+  </div></div>
+            </div>
+	      </div>
+</div>
+			      <hr>
+<div class="row">
+  <div class="col-lg-12"><p class="text-left"><br>The Algorithmic C Math Library (<em>ac_math</em>) contains synthesizable C++ functions commonly used in Digital Signal Processing applications. The functions use the Algorithmic C data types and are meant to serve as examples on how to write parameterized models and to facilitate migrating an algorithm from using floating-point to fixed-point arithmetic where the math functions either need to be computed dynamically or via lookup tables or piecewise linear approximations. The input and output arguments of the math functions are parameterized so that arithmetic may be performed at the desired fixed point precision and provide a high degree of flexibility on the area/performance trade-off of hardware implementations obtained during Catapult synthesis. The hardware implementations produced by Catapult on the math functions are bit accurate. Simulation of the RTL can thus be easily compared to the C++ simulation of the algorithm. This library also contains a 2-D matrix class (<em>ac_matrix</em>) which implements the most common matrix operations along with other Linear Algebra functions like Cholesky Decomposition.</p></div>
+</div>
+			  <hr>
+<div class="row">
+  <div class="col-lg-12"><br><h4>Summary of Basic Math Functions:</h4><br></div>
+	<table width="895" border="1" summary="Summary of Basic Math Functions">
+  <tbody>
+    <tr>
+      <th rowspan="2">&nbsp;Function Type</th>
+      <th rowspan="2">&nbsp;Function Call</th>
+      <th rowspan="2">&nbsp;Approximation Method</th>
+      <th colspan="3" class="text-center">Supported Data Types</th>
+    </tr>
+    <tr>
+      <th scope="row" class="text-center">ac_fixed</th>
+      <th scope="row" class="text-center">ac_float</th>
+      <th scope="row" class="text-center">ac_complex</th>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;Absolute Value</th>
+      <td>&nbsp;<em>ac_abs()</em></td>
+      <td>&nbsp;N/A</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;No</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;Division</th>
+      <td>&nbsp;<em>ac_div()</em></td>
+      <td>&nbsp;N/A</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;Yes</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;Normalization</th>
+      <td>&nbsp;<em>ac_normalize()</em></td>
+      <td>&nbsp;N/A</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;No</td>
+      <td>&nbsp;Yes</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;Reciprocal</th>
+      <td>&nbsp;<em>ac_reciprocal_pwl()</em></td>
+      <td>&nbsp;PWL</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;Yes</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;Logarithm Base e</th>
+      <td>&nbsp;<em>ac_log_pwl()</em></td>
+      <td>&nbsp;PWL</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;No</td>
+      <td>&nbsp;No</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;</th>
+      <td>&nbsp;<em>ac_log_cordic()</em></td>
+      <td>&nbsp;CORDIC</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;No</td>
+      <td>&nbsp;No</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;Logarithm Base 2</th>
+      <td>&nbsp;<em>ac_log2_pwl()</em></td>
+      <td>&nbsp;PWL</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;No</td>
+      <td>&nbsp;No</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;</th>
+      <td>&nbsp;<em>ac_log2_cordic()</em></td>
+      <td>&nbsp;CORDIC</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;No</td>
+      <td>&nbsp;No</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;Exponent Base e</th>
+      <td>&nbsp;<em>ac_exp_pwl()</em></td>
+      <td>&nbsp;PWL</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;No</td>
+      <td>&nbsp;No</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;</th>
+      <td>&nbsp;<em>ac_exp_cordic()</em></td>
+      <td>&nbsp;CORDIC</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;No</td>
+      <td>&nbsp;No</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;Exponent Base 2</th>
+      <td>&nbsp;<em>ac_pow2_pwl()</em></td>
+      <td>&nbsp;PWL</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;No</td>
+      <td>&nbsp;No</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;</th>
+      <td>&nbsp;<em>ac_exp2_cordic()</em></td>
+      <td>&nbsp;CORDIC</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;No</td>
+      <td>&nbsp;No</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;Square Root</th>
+      <td>&nbsp;<em>ac_sqrt_pwl()</em></td>
+      <td>&nbsp;PWL</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;Yes</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;</th>
+      <td>&nbsp;<em>ac_sqrt()</em></td>
+      <td>&nbsp;N/A</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;No</td>
+      <td>&nbsp;No</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;Inverse Square Root</th>
+      <td>&nbsp;<em>ac_inverse_sqrt_pwl()</em></td>
+      <td>&nbsp;PWL</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;Yes</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;Sine/Cosine</th>
+      <td>&nbsp;<em>ac_sincos()</em></td>
+      <td>&nbsp;LUT</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;No</td>
+      <td>&nbsp;N/A</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;</th>
+      <td>&nbsp;<em>ac_cos_cordic()</em></td>
+      <td>&nbsp;CORDIC</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;No</td>
+      <td>&nbsp;N/A</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;</th>
+      <td>&nbsp;<em>ac_sin_cordic()</em></td>
+      <td>&nbsp;CORDIC</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;No</td>
+      <td>&nbsp;N/A</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;</th>
+      <td>&nbsp;<em>ac_sincos_cordic()</em></td>
+      <td>&nbsp;CORDIC</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;No</td>
+      <td>&nbsp;N/A</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;Tangent</th>
+      <td>&nbsp;<em>ac_tan_pwl()</em></td>
+      <td>&nbsp;PWL</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;No</td>
+      <td>&nbsp;N/A</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;Inverse Trig</th>
+      <td>&nbsp;<em>ac_atan_pwl()</em></td>
+      <td>&nbsp;PWL</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;No</td>
+      <td>&nbsp;N/A</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;</th>
+      <td>&nbsp;<em>ac_arccos_cordic()</em></td>
+      <td>&nbsp;CORDIC</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;No</td>
+      <td>&nbsp;N/A</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;</th>
+      <td>&nbsp;<em>ac_arcsin_cordic()</em></td>
+      <td>&nbsp;CORDIC</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;No</td>
+      <td>&nbsp;N/A</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;</th>
+      <td>&nbsp;<em>ac_arctan_cordic()</em></td>
+      <td>&nbsp;CORDIC</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;No</td>
+      <td>&nbsp;N/A</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;Shift Left/Right</th>
+      <td>&nbsp;<em>ac_shift_left</em></td>
+      <td>&nbsp;N/A</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;No</td>
+      <td>&nbsp;Yes</td>
+    </tr>
+    <tr>
+      <th scope="row">&nbsp;</th>
+      <td>&nbsp;<em>ac_shift_right</em></td>
+      <td>&nbsp;N/A</td>
+      <td>&nbsp;Yes</td>
+      <td>&nbsp;No</td>
+      <td>&nbsp;Yes</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+			  			      <hr>
 
-<body>
-</body>
+<div class="row">
+  <div class="col-lg-8"><br><h4>AC Matrix <br>Operators:</h4><br>
+	  <ul>
+<li><strong><strong>Assignment</strong></strong>: operator=()</li>
+<li><strong><strong>Read-Only and Read-Write Element Access</strong></strong>: *this(&#60;row&#62;,&#60;col&#62;)</li>
+<li><strong><strong>Comparison</strong></strong>: operator!=(), operator==()</li>
+<li><strong><strong>Piecewise Addition</strong></strong>: operator+(), operator+=()</li>
+<li><strong><strong>Piecewise Subtraction</strong></strong>: operator-(), operator-=()</li>
+<li><strong><strong>Piecewise Multiplication (nested loops)</strong></strong>: pwisemult()</li>
+<li><strong><strong>Matrix Multiplication</strong></strong>: operator*()</li>
+<li><strong><strong>Matrix Transpose</strong></strong>: transpose()</li>
+<li><strong><strong>Sum All Elements</strong></strong>: sum()</li>
+<li><strong><strong>Scale All Elements</strong></strong>: scale(value)</li>
+<li><strong><strong>Formatted Stream Output</strong></strong>: ostream &amp;operator&#60;&#60;()</li>		  
+</ul></div>
+  <div class="col-lg-4 offset-lg-0"><br><h4>Linear Algebra Functions:</h4><br><ul>
+<li>Matrix Multiplication</li>
+<li>Matrix Determinant</li>
+<li>Cholesky Decomposition</li>
+<li>Cholesky Inverse</li>
+<li>QR Decomposition</li>	  
+</ul></div>
+</div>
+      </div>
+        </div>
+    <div class="col-12">
+      <div class="jumbotron">
+<div class="row">
+	      <div class="col-lg-4"><img src="/quantizedwaveform_Vec-01.png" alt="Quantized Waveform" width="300" class="align-middle img-fluid"></div>
+        <div class="col-lg-8">
+		        <h4>AC Datatypes</h4><p class="text-left">The Algorithmic C datatypes include a numerical set of datatypes and an interface datatype for modeling channels in communicating processes in C++. The numerical datatypes provide an easy way to model static bit-precision with minimal runtime overhead. They include bit-accurate integer, fixed-point, floating-point and complex datatypes. The numerical datatypes were developed in order to provide a basis for writing bit-accurate algorithms to be synthesized into hardware.</p>
+	        &nbsp;
+		        <div>
+		          <div class="float-right"><div class="btn-group" role="group" aria-label="Basic example">
+		            <a class="btn btn-secondary" href="ACDatatypes/" target="_parent" role="button">Learn More</a>
+		            &nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href="https://github.com/hlslibs/ac_types/blob/master/pdfdocs/ac_datatypes_ref.pdf" target="_parent" role="button">Documentation</a> 
+		            &nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href="https://github.com/hlslibs/ac_types" target="_parent" role="button">Browse Github</a>
+					  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+	      <div class="col-12">
+      <div class="jumbotron">
+        <div class="row">
+          <div class="col-lg-4"><img src="/AC-DSP.png" alt="IIR Filter" width="300" class="align-middle img-fluid"></div>
+          <div class="col-lg-8">
+            <h4>AC DSP</h4>
+            <p class="text-left">The Algorithmic C Digital Signal Processing Library contains synthesizable C++ objects for common DSP operations like filters and Fast Fourier Transforms. The functions use a C++ class-based object design so that it is easy to instantiate multiple variations of objects into a more complex subsystem and utilize the AC Datatypes for true bit-accurate behavior. The filter block set includes CIC Interpolation and Decimation, FIR filters, IIR filters, Moving Average Filters and Polyphase Interpolation/Decimation. The FFT block set includes various FFT architectures including Decimation-in-Time and Decimation-in-Frequency, various radix modes and various buffer architectures (memory-exchange, single-delay-feedback, in-place).</p>
+            &nbsp;
+            <div>
+              <div class="float-right">
+                <div class="btn-group" role="group" aria-label="Basic example"> <a class="btn btn-secondary" href="ACMath/" target="_parent" role="button">Learn More</a> &nbsp;&nbsp;&nbsp; <a class="btn btn-secondary" href="https://github.com/hlslibs/ac_math/blob/master/pdfdocs/ac_math_ref.pdf" target="_parent" role="button">Documentation</a> &nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href="https://github.com/hlslibs/ac_math" target="_parent" role="button">Browse Github</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container"> </div>
+    <hr>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-12">
+          <h2>Lorem ipsum</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis accusamus praesentium eveniet ad unde doloremque ex officia eius ab quibusdam.</p>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12">
+          <h2>Lorem ipsum</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, mollitia natus amet eligendi consequuntur. Veritatis ullam debitis voluptas repellat laboriosam.</p>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12">
+          <h2> Lorem ipsum</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, error, itaque non vel architecto ratione obcaecati doloribus delectus illum harum?</p>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12">
+          <h2>Lorem ipsum</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, nam voluptate accusantium nulla distinctio odit aliquam voluptatem ab. Earum.</p>
+        </div>
+      </div>
+    </div>
+    <hr>
+<div class="container mt-4">
+  <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <img class="card-img-top" src="../images/600X300.gif" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Feature</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, at.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <img class="card-img-top" src="../images/600X300.gif" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Feature</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, at.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="container py-sm-4">
+          <div class="row"> </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-6 mb-md-0 mb-2">
+          <a href="mailto:hlslibs@mentor.com" target="_parent"><h2 class="text-center">Contact Us</h2></a>
+          </div>
+<div class="col-lg-4 col-12 offset-lg-4">
+      <h2 class="text-center">About Us</h2>
+</div>
+      </div>
+    </div>
+    <hr>
+    <footer class="text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <p>Copyright © Mentor, A Siemens Business. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap-4.0.0.js"></script>
+  </body>
 </html>
