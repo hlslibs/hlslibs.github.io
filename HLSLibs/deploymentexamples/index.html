@@ -1,10 +1,171 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Untitled Document</title>
-</head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="HLS libraries are targeted to enable a faster path to hardware acceleration by providing easy-to-understand, high-quality fundamental building blocks that can be synthesized into both FPGA and ASIC.">
+	  <!-- Provide a short description of the page. -->
+<meta name="description" content="HLSLibs is a free and open set of libraries implemented in standard C++ for bit-accurate hardware and software design.">
+<!-- This meta tag tells Google not to show the sitelinks search box. -->
+<meta name="google" content="nositelinkssearchbox" />	
+<!-- Control the behavior of search engine crawling and indexing. 
+ The robots meta tag applies to all search engines, while the "googlebot" meta tag is specific to Google. -->
+<meta name="robots" content="..., ..." />
+<meta name="http-equiv" content="X-Robots-Tag : noindex, follow" />
+<meta name="googlebot" content="..., ..." />	
+<!-- Used for verifying ownership of a site. -->
+<meta name="verify" content=""/>
 
-<body>
+<!-- Open Graph Meta Tags -->
+<!-- Set the canonical URL for the page you are sharing. -->
+<meta property="og:url" content="https://hlslibs.org/">
+<!-- The title to accompany the URL. -->
+<meta property="og:title" content="HLS Libs Website"/>
+<!-- Provides Facebook the name that you would like your website to be recognized by. -->
+<meta property="og:site_name" content="HLS Libs Homepage">
+<!-- Provides Facebook the type of website that you would like your website to be categorized by. -->
+<meta property="og:type" content="HLS Libs Website">
+<!-- Defines the language, American English is the default. -->
+<meta property="og:locale" content="en-IN">
+<!-- Directs Facebook to use the specified image when the page is shared. -->
+<meta property="og:image" content="../Favicon/android-chrome-512x512.png">
+<!-- Similar to the meta description tag in HTML. This description is shown below the link title on Facebook. -->
+<meta property="og:description" content="HLSLibs is a free and open set of libraries implemented in standard C++ for bit-accurate hardware and software design."/>
+
+<!-- Twitter Card data -->
+<!-- The type of card to be created: summary, photo, or video -->
+<meta name="twitter:card" content="summary" />
+<!-- Title of the Twitter Card -->
+<meta name="twitter:title" content="HLS Libs: Free and open set of libraries." />
+<!-- Description of content -->
+<meta name="twitter:description" content="HLSLibs is a free and open set of libraries implemented in standard C++ for bit-accurate hardware and software design." />
+<!-- URL of image to use in the card. Used with summary, summary_large_image, player cards -->
+<meta name="twitter:image" content="../Favicon/android-chrome-512x512.png" />
+    <title>HLSLIBS Homepage</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.0.0.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/lux/bootstrap.min.css" rel="stylesheet" type="text/css">
+<!-- Favicons -->
+<link rel="apple-touch-icon" href="HLSLibs/path/to/favicon-180.png" sizes="180x180">
+<link rel="icon" href="/Favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/Favicon/smalltile.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/Favicon/manifest.json">
+<link rel="mask-icon" href="/Favicon/safari-pinned-tab.svg" color="#2B5797">
+<link rel="icon" href="/Favicon/favicon.ico">
+<meta name="msapplication-config" content="/Favicon/browserconfig.xml">
+<meta name="theme-color" content="#2B5797">				  
+  </head>
+  <body>
+	  <!-- The fixed navbar will overlay your other content, unless you add padding to the bottom of the <body>. Tip: By default, the navbar is 50px high.  -->
+<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+   <a class="navbar-brand" href="#">HLS Libs<span class="sr-only">(current)</span></a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+		           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            GitHub Repository
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <a class="dropdown-item" href="https://github.com/hlslibs" target="_parent">GitHub Repository</a>
+               <div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="https://github.com/hlslibs/ac_types" target="_parent">AC Datatypes</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href="https://github.com/hlslibs/ac_math" target="_parent">AC Math</a>
+            </div>
+         </li>
+		  <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  href="https://www.mentor.com/hls-lp/catapult-high-level-synthesis/" target="_parent" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Catapult Resources
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <a class="dropdown-item" href="https://www.mentor.com/hls-lp/catapult-high-level-synthesis/" target="_parent">Catapult Home</a>
+				<div class="dropdown-divider"></div>
+               <a class="dropdown-item" href="https://learn.mentor.com/library/catapult-high-level-synthesis-library/NJnQf9ar4" target="_parent">HLS On-Demand Training</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href="https://www.mentor.com/hls-lp/resources/#?filter=9a7fe4d7-3658-46ec-bc78-621b3616b6a8&start=1&limit=70" target="_parent">Catapult Collateral</a>
+            </div>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="HLSLibs/deploymentexamples" target="_parent">Deployment Examples</a>
+         </li>
+      </ul>
+   </div>
+</nav>
+	  <br><br><br><br><br>
+	  <div class="container mt-2">
+		    <div class="row">
+    <div class="col-12">
+	<h4>Deployment Examples</h4><p class="text-left">The following are deployment examples of our various libraries. The goal of HLSLibs is to create an open community for exchange of knowledge and IP for HLS (High-Level Synthesis) that can be used to accelerate both research and design. The libraries are targeted to enable a faster path to hardware acceleration by providing easy-to-understand, high-quality fundamental building blocks that can be synthesized into both FPGA and ASIC. HLSLibs are delivered as an open-source project on GitHub under the <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_parent">Apache 2.0 license</a> and contributions are welcome.
+		</p>
+		</div>
+				</div>
+  <div class="row">
+    <div class="col-12">
+          <div class="jumbotron">
+<div class="row">
+	      <div class="col-lg-4"><img src="../../quantizedwaveform_Vec-01.png" width="300" alt="Quantized Waveform" class="align-middle img-fluid"></div>
+        <div class="col-lg-8">
+		        <h4>AC Datatypes</h4><p class="text-left">The Algorithmic C datatypes include a numerical set of datatypes and an interface datatype for modeling channels in communicating processes in C++. The numerical datatypes provide an easy way to model static bit-precision with minimal runtime overhead. They include bit-accurate integer, fixed-point, floating-point and complex datatypes. The numerical datatypes were developed in order to provide a basis for writing bit-accurate algorithms to be synthesized into hardware.</p>
+	        &nbsp;
+		        <div>
+		          <div class="float-right"><div class="btn-group" role="group" aria-label="Basic example">
+		            <a class="btn btn-secondary" data-toggle="collapse" href="#collapseACDatatypes" role="button">Learn More</a>
+		            &nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href="https://github.com/hlslibs/ac_types/blob/master/pdfdocs/ac_datatypes_ref.pdf" target="_parent" role="button">Documentation</a> 
+		            &nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href="https://github.com/hlslibs/ac_types" target="_parent" role="button">Browse Github</a>		  
+</div>
+  </div></div>
+            </div>
+	<div class="collapse" id="collapseACDatatypes">
+					      <hr>
+<div class="row">
+  <div class="col-lg-12"><p class="text-left"><br>The Algorithmic C (AC) datatypes include a numerical set of datatypes and an interface datatype for modeling channels in communicating processes in C++. The numerical datatypes provide an easy way to model static bit-precision with minimal runtime overhead. They include bit-accurate integer, fixed-point, floating-point and complex datatypes.  The numerical datatypes were developed in order to provide a basis for writing bit-accurate algorithms to be synthesized into hardware. The Algorithmic C Datatypes are used in Catapult High-Level Synthesis, a tool that generates optimized RTL from algorithms written as sequential ANSI-standard C/C++ specifications.<br><br>
+
+
+Operators and methods on both the integer and fixed-point types are clearly and consistently defined so that they have well defined simulation and synthesis semantics. They enable algorithm, system and hardware designers to precisely model bit-true behavior in C++ specifications while accelerating simulation speeds by 10-200x faster versus alternate bit-accurate integer and fixed-point datatypes. The bit-accurate complex and floating-point types are unique in that they are not available in alternative datatype packages such as SystemC. Bit-accurate complex types are important because they allow computation of additive and multiplicative operations on a mixture of complex operands based on bit-accurate integer and fixed-point types and return the require type so that results are represented without any loss of precision.</p></div>
+</div>
+			      <hr>
+<div class="row">
+  <div class="col-lg-12"><br><h4>The advantages of the AC datatypes over the existing integer and fixed-point datatypes are the following:</h4></div>
+</div>
+			  <div class="row">
+  <div class="col-lg-6">
+    <p class="text-left"><br>
+      <strong><strong>Arbitrary-Length:</strong></strong> This allows a clean definition of the semantics for all operators that is not tied to an implementation limit. It is also important for writing general IP algorithms that don’t have artificial (and often hard to quantify and document) limits for precision. For example, Catapult provides generic math functions such as division and square root for arbitrary-length datatypes.<br>
+      <br>
+      <strong><strong>Precise and Consistent Definition of Semantics:</strong></strong> Special attention has been paid to define and verify the simulation semantics and to make sure that the semantics are appropriate for synthesis. No simulation behavior has been left to compiler dependent behavior. Also, asserts have been introduced to catch invalid code during simulation. There is consistency of semantics across datatypes. Whenever possible, the return type of operators does not loose precision.</p>
+  </div>
+  <div class="col-lg-6"><p class="text-left"><br><strong><strong>Correctness:</strong></strong> The simulation and synthesis semantics have been verified for many size combinations using a combination of simulation and equivalence checking.<br><br>
+<strong>Simulation Speed:</strong> The implementation of ac_int uses sophisticated template specialization techniques so that a regular C++ compiler can generate optimized assembly language that will run much faster than the equivalent SystemC datatypes. For example, ac_int of bit widths in the range 1 to 32 can run 100x faster than the corresponding sc_bigint/sc_biguint datatype and 3x faster than the corresponding sc_int/sc_uint datatype.<br><br>
+<strong><strong>Compilation Speed and Smaller Executable:</strong></strong> Code written using ac_int datatypes compiles 5x faster even with the compiler optimizations turned on (required to get fast simulation). It also produces smaller binary executables.</p></div>
+</div>
+			  <hr>
+<div class="row">
+  <div class="col-lg-12"><br><h4>WHAT YOU GET</h4><br><h6>T<span class= "text-lowercase">he zipped folder contains a reference manual, release notes, header files and a python script for pretty printing of the</span> AC D<span class= "text-lowercase">atatypes in the gdb debugger.</span></h6></div>
+</div>
+<div class="row">
+  <div class="col-lg-6"><br><ul>
+<li><strong><strong>ac_channel.h </strong></strong>- Header to model streaming communication between blocks in C++.</li>
+<li><strong><strong>ac_complex.h</strong></strong> - Header for complex (real, imaginary) datatype.</li>
+<li><strong><strong>ac_fixed.h</strong></strong> - Header for bit-accurate fixed-point types.</li>
+<li><strong><strong>ac_float.h</strong></strong> - Header for bit-accurate floating-point types. The mantissa is an ac_fixed (two&#39;s complement) and the exponent is an ac_int.</li>
+<li><strong><strong>ac_int.h</strong></strong> - Header for bit-accurate integer types. It also provides other utility functions and contains the base classes to implement arbitrary length arithmetic.</li>
+</ul></div>
+  <div class="col-lg-6"><br><ul>
+<li><strong><strong>ac_sc.h</strong></strong> - Header containing conversion function to and from SystemC datatypes and tracing function to use the AC Datatypes within SystemC.</li>
+<li><strong><strong>ac_pp.py</strong></strong> - Python script for pretty printing of the AC Datatypes in the gdb debugger</li>
+<li><strong><strong>Reference Manual </strong></strong>- Overview of Algorithmic C Datatypes</li>
+<li><strong><strong>Release Notes</strong></strong> - Algorithmic C (AC) Datatypes Release Notes Software Version 3.7</li>
+</ul></div>
+</div>
+	      </div>
+</div>
+		</div>
+    </div>
+</div>
+		  </div>
 </body>
 </html>
