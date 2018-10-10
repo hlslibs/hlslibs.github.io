@@ -4931,7 +4931,7 @@ tbody.collapse.show {
 
 .jumbotron {
   padding: .25rem 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: .25rem;
   background-color: #e9ecef;
   border-radius: 0.3rem;
 }
