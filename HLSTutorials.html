@@ -1,11 +1,180 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Untitled Document</title>
-</head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151882251-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<body>
-	testingggg
-</body>
+  gtag('config', 'UA-151882251-2');
+</script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="HLS libraries are targeted to enable a faster path to hardware acceleration by providing easy-to-understand, high-quality fundamental building blocks that can be synthesized into both FPGA and ASIC.">
+	  <!-- Provide a short description of the page. -->
+<meta name="description" content="HLSLibs is a free and open set of libraries implemented in standard C++ for bit-accurate hardware and software design.">
+<!-- This meta tag tells Google not to show the sitelinks search box. -->
+<meta name="google" content="nositelinkssearchbox" />	
+<!-- Control the behavior of search engine crawling and indexing. 
+ The robots meta tag applies to all search engines, while the "googlebot" meta tag is specific to Google. -->
+<meta name="robots" content="..., ..." />
+<meta name="http-equiv" content="X-Robots-Tag : noindex, follow" />
+<meta name="googlebot" content="..., ..." />	
+<!-- Used for verifying ownership of a site. -->
+<meta name="verify" content=""/>
+
+<!-- Open Graph Meta Tags -->
+<!-- Set the canonical URL for the page you are sharing. -->
+<meta property="og:url" content="https://hlslibs.org/">
+<!-- The title to accompany the URL. -->
+<meta property="og:title" content="HLS Libs Website"/>
+<!-- Provides Facebook the name that you would like your website to be recognized by. -->
+<meta property="og:site_name" content="HLS Libs Homepage">
+<!-- Provides Facebook the type of website that you would like your website to be categorized by. -->
+<meta property="og:type" content="HLS Libs Website">
+<!-- Defines the language, American English is the default. -->
+<meta property="og:locale" content="en-IN">
+<!-- Directs Facebook to use the specified image when the page is shared. -->
+<meta property="og:image" content="../Favicon/android-chrome-512x512.png">
+<!-- Similar to the meta description tag in HTML. This description is shown below the link title on Facebook. -->
+<meta property="og:description" content="HLSLibs is a free and open set of libraries implemented in standard C++ for bit-accurate hardware and software design."/>
+
+<!-- Twitter Card data -->
+<!-- The type of card to be created: summary, photo, or video -->
+<meta name="twitter:card" content="summary" />
+<!-- Title of the Twitter Card -->
+<meta name="twitter:title" content="HLS Libs: Free and open set of libraries." />
+<!-- Description of content -->
+<meta name="twitter:description" content="HLSLibs is a free and open set of libraries implemented in standard C++ for bit-accurate hardware and software design." />
+<!-- URL of image to use in the card. Used with summary, summary_large_image, player cards -->
+<meta name="twitter:image" content="../Favicon/android-chrome-512x512.png" />
+    <title>HLSLIBS Homepage</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.0.0.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/lux/bootstrap.min.css" rel="stylesheet" type="text/css">
+<!-- Favicons -->
+<link rel="apple-touch-icon" href="HLSLibs/path/to/favicon-180.png" sizes="180x180">
+<link rel="icon" href="/Favicon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/Favicon/smalltile.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/Favicon/manifest.json">
+<link rel="mask-icon" href="/Favicon/safari-pinned-tab.svg" color="#2B5797">
+<link rel="icon" href="/Favicon/favicon.ico">
+<meta name="msapplication-config" content="/Favicon/browserconfig.xml">
+<meta name="theme-color" content="#2B5797">				  
+  </head>
+  <body>
+	  <!-- The fixed navbar will overlay your other content, unless you add padding to the bottom of the <body>. Tip: By default, the navbar is 50px high.  -->
+<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+   <a class="navbar-brand" href="https://hlslibs.org/">HLS Libs<span class="sr-only">(home)</span></a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+		           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            GitHub Repository
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <a class="dropdown-item" href="https://github.com/hlslibs" target="_parent">GitHub Repository</a>
+               <div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="https://github.com/hlslibs/ac_types" target="_parent">AC Datatypes</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href="https://github.com/hlslibs/ac_math" target="_parent">AC Math</a>
+				<div class="dropdown-divider"></div>
+               <a class="dropdown-item" href="https://github.com/hlslibs/ac_dsp" target="_parent">AC DSP</a>
+				<div class="dropdown-divider"></div>
+               <a class="dropdown-item" href="https://github.com/hlslibs/matchlib_connections" target="_parent">MatchLib Connections</a>
+            </div>
+         </li>
+		  <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  href="https://www.mentor.com/hls-lp/catapult-high-level-synthesis/" target="_parent" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Catapult Resources
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <a class="dropdown-item" href="https://www.mentor.com/hls-lp/catapult-high-level-synthesis/" target="_parent">Catapult Home</a>
+				<div class="dropdown-divider"></div>
+               <a class="dropdown-item" href="https://learn.mentor.com/library/catapult-high-level-synthesis-library/NJnQf9ar4" target="_parent">HLS On-Demand Training</a>
+               <div class="dropdown-divider"></div>
+               <a class="dropdown-item" href="https://www.mentor.com/hls-lp/resources/#?filter=9a7fe4d7-3658-46ec-bc78-621b3616b6a8&start=1&limit=70" target="_parent">Catapult Collateral</a>
+            </div>
+         </li>
+		           <li class="nav-item">
+            <a class="nav-link" href="HLSTutorials.html" target="_parent">HLS Tutorials</a>
+         </li>
+      </ul>
+   </div>
+</nav>
+	  <br><br><br><br><br>
+	  <div class="container mt-2">
+		    <div class="row">
+    <div class="col-12">
+	<h4>HLS Tutorials</h4><p class="text-left">Are you interested in understanding more about HLS and if you could get the kinds of big design/verification SHIFT-LEFT results that major companies are seeing? The following are great resources for any RTL designer or System architect interested in what is HLS but especially those that are familiar with building high performance hardware that include Image Processing.
+		</p>
+		</div>
+				</div>
+  <div class="row">
+    <div class="col-12">
+          <div class="jumbotron">
+<div class="row">
+	      <div class="col-lg-4"><img src="EdgeDetectionSeries-01.png" alt="Quantized Waveform" width="300" class="align-middle img-fluid"></div>
+        <div class="col-lg-8">
+		        <h4>Edge Detection Walkthrough Series</h4><p class="text-left">The following series of videos provides a step-by-step walkthrough of what is needed to take a C++ floating-point algorithm all the way to optimized RTL using Catapult synthesis.<br><br>If you would like to step through this design you can do so by downloading source files via the Github Download button below.</p>
+	        &nbsp;
+		        <div>
+		          <div class="float-right"><div class="btn-group" role="group" aria-label="Basic example">
+		            <a class="btn btn-secondary" href="https://www.youtube.com/channel/UCJMnUQKLcNNQ_KrD97_sU6w/playlists" target="_parent" role="button">Watch Videos</a>
+		            &nbsp;&nbsp;&nbsp;<a class="btn btn-secondary" href="https://github.com/hlslibs/hls_tutorials/tree/master/WalkThroughs/EdgeDetect/src" target="_parent" role="button">Github Download</a>		  
+</div>
+  </div></div>
+            </div>
+  <div class="row">
+    <div class="col-12">
+          <div class="jumbotron">
+<div class="row">
+          <div class="col-lg-4"><img src="HLSodt-01.png" alt="Unit Circle" width="300" class="align-middle img-fluid"></div>
+          <div class="col-lg-8">
+            <h4>Catapult HLS & Verification <br>On-Demand Training Library</h4>
+            <p class="text-left">The Catapult High-Level Synthesis (HLS) On-Demand Training (ODT) library contains a set of modules to introduce Engineers to HLS and High-Level Verification.</p>
+            &nbsp;
+            <div>
+              <div class="float-right">
+                <div class="btn-group" role="group" aria-label="Basic example"> <a class="btn btn-secondary" href="https://www.mentor.com/training/courses/catapult-high-level-synthesis-library" target="_parent" role="button">Learn More</a><br> &nbsp;&nbsp;&nbsp; <a class="btn btn-secondary" href="https://registration1.mentor.com/purchase/product/training/sku/273992-OND-29956T" target="_parent" role="button">Start free trial</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+	  </div>
+		</div></div></div></div></div></div>
+    </div>
+    <hr>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-6 mb-md-0 mb-2">
+          <a href="mailto:hlslibs@mentor.com" target="_parent"><h2 class="text-center">Contact Us</h2></a>
+        </div>
+<div class="col-lg-4 col-12 offset-lg-4">
+      <h2 class="text-center">About Us</h2>
+</div>
+      </div>
+    </div>
+    <hr>
+    <footer class="text-center">
+<div class="container">
+      <div class="row">
+		      <div class="col-12">
+            <p class="text-center" style="text-align:center">Copyright 2020 ©Mentor, A Siemens Business. All rights reserved.</p>
+      </div>
+	</div>
+	</div>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.0.0.js"></script>
+	  </body>
 </html>
